@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airdrop List</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scroll bars */
+            background-color: #0e0e0e;
+            overflow: auto;
+        }
+
+        .background-base {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-image: url('https://th.bing.com/th/id/OIP.vvizIB2c7PWQpkkEeFqe7AHaEK?rs=1&pid=ImgDetMain.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(5px);
+            opacity: 0.3;
+        }
+
+        .background-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none; /* Make sure it doesn't interfere with interactions */
+        }
+
+        .background-grid img {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .background-grid img:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #00c853;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #00c853;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        main ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        main ul li {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #1c1c1c;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        main ul li:hover {
+            background: #333;
+            transform: translateY(-5px);
+        }
+
+        main ul li img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
+
+        main ul li p {
+            margin: 0;
+            font-size: 1.3em;
+            color: #e0e0e0;
+        }
+
+        main ul li a {
+            color: #03a9f4;
+            text-decoration: none;
+        }
+
+        main ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-base"></div>
+    <div class="background-grid"></div>
+    <div class="container">
+        <header>
+            <h1>Airdrop List</h1>
+        </header>
+        <main>
+            <ul id="airdrop-list">
+                <!-- Contoh Airdrop -->
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/50" alt="Airdrop Logo">
+                    <p><a href="https://example.com" target="_blank">Example Airdrop</a></p>
+                </li>
+                
+                <!-- Tambahkan airdrop lainnya di sini -->
+            </ul>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bullishTokens = [
+                'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+                'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+                'https://cryptologos.cc/logos/ripple-xrp-logo.png',
+                'https://cryptologos.cc/logos/litecoin-ltc-logo.png',
+                'https://cryptologos.cc/logos/bitcoin-cash-bch-logo.png',
+                'https://cryptologos.cc/logos/cardano-ada-logo.png',
+                'https://cryptologos.cc/logos/polkadot-dot-logo.png',
+                'https://cryptologos.cc/logos/binance-coin-bnb-logo.png',
+                'https://cryptologos.cc/logos/stellar-xlm-logo.png',
+                'https://cryptologos.cc/logos/chainlink-link-logo.png'
+            ];
+
+            const bearishTokens = [
+                'https://cryptologos.cc/logos/monero-xmr-logo.png',
+                'https://cryptologos.cc/logos/tezos-xtz-logo.png',
+                'https://cryptologos.cc/logos/eos-eos-logo.png',
+                'https://cryptologos.cc/logos/tron-trx-logo.png',
+                'https://cryptologos.cc/logos/iota-miota-logo.png',
+                'https://cryptologos.cc/logos/neo-neo-logo.png',
+                'https://cryptologos.cc/logos/dash-dash-logo.png',
+                'https://cryptologos.cc/logos/zilliqa-zil-logo.png',
+                'https://cryptologos.cc/logos/nano-nano-logo.png',
+                'https://cryptologos.cc/logos/vechain-vet-logo.png'
+            ];
+
+            const grid = document.querySelector('.background-grid');
+            let showingBullish = true;
+
+            function getRandomPosition() {
+                const x = Math.floor(Math.random() * (window.innerWidth - 60));
+                const y = Math.floor(Math.random() * (window.innerHeight - 60));
+                return { x, y };
+            }
+
+            function createTokenGrid(tokens) {
+                grid.innerHTML = '';
+                tokens.forEach(token => {
+                    const img = document.createElement('img');
+                    img.src = token;
+                    const { x, y } = getRandomPosition();
+                    img.style.left = `${x}px`;
+                    img.style.top = `${y}px`;
+                    grid.appendChild(img);
+                });
+            }
+
+            function changeBackgroundTokens() {
+                if (showingBullish) {
+                    createTokenGrid(bullishTokens);
+                } else {
+                    createTokenGrid(bearishTokens);
+                }
+                showingBullish = !showingBullish;
+            }
+
+            // Initial token grid
+            changeBackgroundTokens();
+
+            // Change background tokens every 2 seconds
+            setInterval(changeBackgroundTokens, 2000);
+
+            // Update token positions on resize
+            window.addEventListener('resize', changeBackgroundTokens);
+        });
+    </script>
+</body>
+</html>
